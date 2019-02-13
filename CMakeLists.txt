@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.12)
 
 set(SOURCE_NAME
-        main.cpp)
+        main.cpp
+        convert.cpp
+        convert.hpp)
 
 function(Flag flag init_flag flag_message)
     if(NOT DEFINED ${flag})
