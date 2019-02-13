@@ -2,7 +2,10 @@
 #include <fstream>
 #include "convert.hpp"
 
-ConvertPCL::ConvertPCL(std::string filename):
+ConvertPCL::ConvertPCL(std::string filename, float X, float Y, float Z):
+    coodX(X),
+    coodY(Y),
+    coodZ(Z),
     roteFile(filename),
     signal(true)
 {
@@ -111,6 +114,9 @@ void ConvertPCL::savePose() {
     fp << std::setprecision(3) << Rtheta << "\n";
     fp << std::setprecision(3) << Ptheta << "\n";
     fp << "0.0" << "\n";
+    fp << coodX << "\n";
+    fp << coodY << "\n";
+    fp << coodZ << "\n";
 
     fp.close();
     std::cout << "Save pose to " << file << std::endl;

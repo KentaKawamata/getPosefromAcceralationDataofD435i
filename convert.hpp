@@ -50,13 +50,16 @@ private:
     double x;
     double y;
     double z;
+    float coodX;
+    float coodY;
+    float coodZ;
     bool signal;
 
     std::string roteFile;
 
 public:
 
-    ConvertPCL(std::string filename);
+    ConvertPCL(std::string filename, float X, float Y, float Z);
     ~ConvertPCL();
     void run();
 
